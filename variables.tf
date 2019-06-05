@@ -4,3 +4,4 @@ variable "esxi_username" { default = "root" }
 variable "esxi_password" { default = "FNz3qU977BmL" }
 variable "esxi_username" { default = "root" }
 variable "num_mgr" { default = "2"}
+variable "disk_store" { default = "datastore1"}
