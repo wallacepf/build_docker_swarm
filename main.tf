@@ -24,7 +24,7 @@ resource "esxi_guest" "docker-mgr" {
 
   guestinfo = {
     coreos.config.data.encoding = "base64"
-    coreos.config.data = "${base64encode(data.ignition_config.etcd0.rendered)}"
+    coreos.config.data = "${base64encode(data.ignition_config.coreos.rendered)}"
   }
 
   ovf_source         = "../images/coreos_production_vmware_ova.ova"
