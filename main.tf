@@ -50,8 +50,9 @@ resource "esxi_guest" "docker-mgr" {
         "reboot"
     ]
   }
+}
 
-  resource "esxi_guest" "docker-wrk" {
+resource "esxi_guest" "docker-wrk" {
   count = "${var.num_wrk}"
   guest_name         = "docker-wrk${count.index}"
   disk_store         = "${var.disk_store}"
