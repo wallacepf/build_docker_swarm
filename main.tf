@@ -44,10 +44,8 @@ resource "esxi_guest" "docker-mgr" {
 
   provisioner "remote-exec" {
     inline = [
-        "echo success",
-        "update_engine_client -update",
         "sudo hostnamectl set-hostname ${self.guest_name}",
-        "reboot"
+        "sudo timedatectl set-timezone America/Sao_Paulo"
     ]
   }
 }
@@ -81,10 +79,8 @@ resource "esxi_guest" "docker-wrk" {
 
   provisioner "remote-exec" {
     inline = [
-        "echo success",
-        "update_engine_client -update",
         "sudo hostnamectl set-hostname ${self.guest_name}",
-        "reboot"
+        "sudo timedatectl set-timezone America/Sao_Paulo"
     ]
   }
 }
