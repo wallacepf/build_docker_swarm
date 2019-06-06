@@ -19,7 +19,7 @@ resource "esxi_guest" "docker-mgr" {
   count = "${var.num_mgr}"
   guest_name         = "docker-mgr${count.index}"
   disk_store         = "${var.disk_store}"
-  memsize            = "2048"
+  memsize            = "6144"
   numvcpus           = "2"
 
   guestinfo = {
@@ -56,6 +56,7 @@ resource "esxi_guest" "docker-wrk" {
   disk_store         = "${var.disk_store}"
   memsize            = "2048"
   numvcpus           = "2"
+  boot_disk_size     = "20"
 
   guestinfo = {
     coreos.config.data.encoding = "base64"
